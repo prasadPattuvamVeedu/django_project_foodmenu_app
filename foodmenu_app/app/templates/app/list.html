@@ -1,1 +1,17 @@
-<h1>{{ list1.Item_Name }}</h1>
+{% extends 'app/base.html' %}
+{% block body%}
+<div class="flex mx-10 overflow-hidden mt-10">
+  <div>
+      <img src="{{list1.Item_image}}" alt="image.Image_Name" class="w-128 rounded-lg">
+  </div>
+  <div class="mx-10">
+     <div><h2>{{ list1.Item_Name}}</h2></div>
+     <div><p2 class="text-1xl">{{ list1.Item_desc}}</p2></div>
+     <div><h2 class="font-bold text-3xl">₹{{ list1.Item_price}}</h2></div>
+     <div class="mt-5 space-x-5">
+        <a href="{% url 'app:update' list1.id%}" class=" text-2xl font-bold bg-yellow-400 px-5 rounded-lg">Edit</a>
+        <a href="" class="font-bold text-2xl bg-red-300 rounded-lg px-5">Delete</a></div>
+     
+  </div>
+</div>
+{% endblock %}
